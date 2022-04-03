@@ -1,9 +1,13 @@
 //utilities
 @import "utilities/variables";
+@import "utilities/variables/palette";
 @import "utilities/mixins";
 
 //base
 @import "base/typo";
+@import "base/reset";
+@import "base/grid";
+@import "base/cols";
 
 //layout
 @import "layout/header";
