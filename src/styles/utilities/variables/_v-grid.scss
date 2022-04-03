@@ -6,6 +6,7 @@
     --grid-main: repeat(12, minmax(0, 1fr));
     --grid-gap: 30px;
     --container-padding: 20px;
+    --grid-main-info: repeat(12, minmax(0, 1fr));
   }
   
   /* Size: md */
@@ -13,6 +14,7 @@
     :root {
       --grid-main: repeat(12, minmax(0, 1fr));
       --grid-gap: 20px;
+      --grid-main-info: repeat(6, minmax(0, 1fr));
     }
   }
   
@@ -22,6 +24,8 @@
       --grid-main: repeat(8, minmax(0, 1fr));
       --grid-gap: 15px;
       --container-padding: 15px;
+      --grid-main-info: repeat(2, minmax(0, 1fr));
+
     }
   }
   
@@ -31,6 +35,7 @@
       --grid-main: repeat(6, minmax(0, 1fr));
       --grid-gap: 10px;
       --container-padding: 10px;
+      --grid-main-info: repeat(2, minmax(0, 1fr));
     }
   }
   
@@ -40,6 +45,7 @@
       --grid-main: repeat(4, minmax(0, 1fr));
       --grid-gap: 10px;
       --container-padding: 10px;
+      --grid-main-info: repeat(2, minmax(0, 1fr));
     }
   }
   

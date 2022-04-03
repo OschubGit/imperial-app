@@ -6,6 +6,7 @@
     &__header {
         min-height: 60px;
         height: 60px;
+        box-sizing: border-box;
         background-color:  var(--grey500);
     }
 
@@ -13,5 +14,17 @@
         height: 100%;
         min-height: calc(100vh - 60px);
         background-color: var(--grey400);
+
+        &-info {
+            display: grid;
+            grid-template-columns: var(--grid-main-info);
+            grid-template-rows: 1fr;
+            grid-gap: 8px;
+
+            & div{
+                height: 55px;
+                background-color: aquamarine;
+            }
+        }
     }
 }
