@@ -3,8 +3,9 @@ import Aside from './Aside'
 import Content from './Content'
 
 const Layout = () => {
+
   return (
-    <div className='layout'>
+    <div className="layout">
         <div className='layout__aside'>
             <Aside/>
         </div>
