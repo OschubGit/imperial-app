@@ -1,0 +1,17 @@
+.navImage{
+    color: var(--common-black);
+    font-size: var(--text-caption);
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    & img{
+        border-radius: 100%;
+        width: 35px;
+        height: 35px;
+        object-fit: cover;
+        object-position: center center;
+    }
+    
+}
