@@ -19,11 +19,6 @@
             grid-template-columns: var(--grid-main-info);
             grid-template-rows: 1fr;
             grid-gap: 8px;
-
-            & div{
-                height: 55px;
-                background-color: aquamarine;
-            }
         }
     }
 }
