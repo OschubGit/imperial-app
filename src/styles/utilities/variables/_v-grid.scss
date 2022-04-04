@@ -8,6 +8,15 @@
     --container-padding: 20px;
     --grid-main-info: repeat(12, minmax(0, 1fr));
   }
+
+  /* Size: xl */
+  @media (max-width: 1200px) {
+    :root {
+      --grid-main: repeat(12, minmax(0, 1fr));
+      --grid-gap: 20px;
+      --grid-main-info: repeat(9, minmax(0, 1fr));
+    }
+  }
   
   /* Size: md */
   @media (max-width: 900px) {
