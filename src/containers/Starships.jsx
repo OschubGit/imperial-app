@@ -60,10 +60,11 @@ const Starships = () => {
                   <button className='button-border' disabled={counter > 3} onClick={handleClickNext}>Nex</button>
                 </div>
             </div>
+
             {!loader ? (
             <div className='content__main-info'>
               {starships && starships.map((m, index) => (
-                  <div key={index} className='col-6 col-xl-3 col-md-3 col-sm-2 col-xs-2'>
+                  <div key={index} className='col-3 col-xl-4 col-md-3 col-sm-2 col-xs-2'>
                     <Card
                       src={Img}
                       alt={m.name}
