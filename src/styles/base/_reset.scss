@@ -18,6 +18,16 @@ h6 {
     margin-bottom: 0;
 }
 
+a:active{
+    color: var(--common-black);
+    text-decoration: none;
+}
+
+a:visited{
+    color: var(--common-black);
+    text-decoration: none;
+}
+
 .content-small{
     padding: var(--padding-small);
 }

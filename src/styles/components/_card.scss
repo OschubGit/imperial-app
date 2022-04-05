@@ -33,11 +33,22 @@
         &-general{
             color: var(--secondary-light);
             cursor: pointer;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        & span{
+            font-size: var(--text-xs);
+            font-family: var(--secondary-font);
         }
         
         & caption{
             color: var(--light-blue);
             font-size: var(--text-caption);
+            font-style: italic;
+            display: flex;
         }
 
         &-avatar{

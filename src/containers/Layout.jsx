@@ -1,8 +1,9 @@
 import React from 'react'
 import Aside from './Aside'
-import Content from './Content'
+import Header from './Header'
 
-const Layout = () => {
+
+const Layout = ({children}) => {
 
   return (
     <div className="layout">
@@ -10,7 +11,12 @@ const Layout = () => {
             <Aside/>
         </div>
         <div className='layout__content'>
-            <Content/>
+          <div className='content'>
+            <div className='content-large content__header'>
+                <Header/>
+            </div>
+          </div>
+          {children}
         </div>
     </div>
   )

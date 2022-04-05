@@ -30,7 +30,7 @@ const Header = () => {
     {open && (
       <div className='mobileMenu'>
         <div className='mobileMenu__close'>
-        <IoCloseCircleSharp onClick={handleClose}/>
+          <IoCloseCircleSharp onClick={handleClose}/>
         </div>
         <Aside/>
       </div>
