@@ -46,7 +46,7 @@ const Main = () => {
               planets.map((m, index) => (
                 <div
                 key={index}
-                className="col-6 col-xl-3 col-md-3 col-sm-2 col-xs-2"
+                className="col-3 col-xl-4 col-md-3 col-sm-2 col-xs-2"
                 >
                   <Card
                     src={Img}
