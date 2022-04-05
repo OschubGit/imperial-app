@@ -7,7 +7,7 @@
     gap: 8px;
     
     & img{
-        border-radius: 100%;
+        @include rounded(100%);
         width: 35px;
         height: 35px;
         object-fit: cover;

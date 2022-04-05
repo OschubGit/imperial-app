@@ -1,13 +1,13 @@
+header{
+    height: 100%;
+}
 .header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-between;
     height: 100%;
 
     &__title{
         position: relative;
-        display: flex;
-        align-items: center;
+        @include flex-align-center;
         gap: 8px;
         &-menu{
             display: block;
@@ -20,8 +20,7 @@
     }
 
     &__actions{
-        display: flex;
-        align-items: center;
+        @include flex-align-center;
 
         svg{
             font-size: var(--text-base);
@@ -32,10 +31,11 @@
 }
 
 .mobileMenu{
-    width: 75%;
-    transition: all 2s ease;
     background-color: var(--common-white);
     padding: var(--padding-medium);
+    width: 75%;
+    transition: all 2s ease;
+    min-height: 100vh;
     height: 100%;
     position: absolute;
     top: 0;
@@ -44,15 +44,18 @@
     z-index: 9;
 
     &__close{
+        padding: var(--padding-medium);
+        @include flex-align-center;
         position: absolute;
         top: 0;
         right: 0;
-        padding: var(--padding-medium);
-        display: flex;
-        align-items: center;
         & svg{
             font-size: var(--text-base);
             margin-right: 4px;
         }
     }
+}
+
+.displayMenu{
+    display: none;
 }

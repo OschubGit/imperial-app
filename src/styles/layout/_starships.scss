@@ -1,0 +1,22 @@
+.filters{
+    @include flex-align-center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &__options{
+        @include flex-align-center;
+        flex-wrap: wrap;
+    }
+}
+
+.pagination{
+    display: flex;
+    justify-content: flex-end;
+    min-width: 200px;
+    align-items: center;
+
+    @media (max-width: 700px){
+        justify-content: flex-start;
+    }
+}

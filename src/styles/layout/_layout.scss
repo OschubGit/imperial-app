@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns:  240px auto;
     grid-template-rows: 1fr;
+    grid-template-areas: "aside content"
+                        "footer footer";
     min-height: 100vh;
     transition: 2s;
 
@@ -18,10 +20,22 @@
             grid-template-rows: 1fr;
             min-height: 100vh;
     }
-
+    &__aside {
+        position: relative;
+        background-color: var(--common-white);
+        grid-area: aside;
+    }
 
     &__content {
         position: relative;
+        background-color: var(--common-white);
+        grid-area: content;
+    }
+
+    &__footer {
+        position: relative;
+        background-color: var(--common-black);
+        grid-area: footer;
     }
 }
 

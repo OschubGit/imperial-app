@@ -1,30 +1,25 @@
-import React from 'react'
-import {IoPlanet, IoSparkles, IoPeople, IoCarSport} from 'react-icons/io5'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import navigation from "../navigation";
 
 const Nav = () => {
   return (
-    <nav className='nav'>
-        <ul className='nav__list'>
-            <li className='nav__list-item'>
-              <Link to='/'>
-                <IoPlanet/>Planets
-              </Link>
-                </li>
-            <hr/>
-            <li className='nav__list-item'>
-              <Link to='/starships'>
-                <IoSparkles/>Starships
+    <nav className="nav">
+      <ul className="nav__list">
+        {navigation.map((n, index) => (
+          <div key={index}>
+            <li className="nav__list-item">
+              <Link to={`${n.slug}`}>
+                {n.icon}
+                {n.title}
               </Link>
             </li>
-            <hr/>
-            <li className='nav__list-item'><IoPeople/>People</li>
-            <hr/>
-            <li className='nav__list-item'><IoCarSport/>Vehicles</li>
-            <hr/>
-        </ul>
+            <hr />
+          </div>
+        ))}
+      </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

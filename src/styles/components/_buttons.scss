@@ -1,0 +1,30 @@
+.button{
+    padding: var(--padding-medium);
+    font-size: var(--text-xs);
+    margin: var(--space-s);
+    @include rounded(4px);
+    @include  border-box;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.button-contained{
+    @extend .button;
+    color: var(--common-white);
+    background-color: var(--secondary-color);
+    border: 0.3ps solid var(--primary-color);
+}
+
+.button-border{
+    @extend .button;
+    color: var(--common-black);
+    border: 0.3px solid var(--primary-color);
+    background-color: transparent;
+}
+
+.button[disabled]{
+    @extend .button;
+    background-color: var(--grey100);
+    color: var(--grey500);
+    border: 0px;
+}

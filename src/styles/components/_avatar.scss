@@ -1,9 +1,9 @@
 .avatar{
+    @include rounded(100%);
     width: 30px;
     min-width: 30px;
     height: 30px;
     overflow: hidden;
-    border-radius: 100%;
 
     &__img{
         object-fit: cover;

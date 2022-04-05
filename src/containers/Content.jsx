@@ -1,42 +1,69 @@
-import React, {useEffect, useState} from 'react'
-import Card from '../components/Card'
-import Img from "../assets/planets/bespin.png"
-
+import React, { useEffect, useState } from "react";
+import Card from "../components/Card";
+import Img from "../assets/planets/bespin.png";
 
 const Main = () => {
-  const [planets, setPlanets] = useState()
-  const [diameter, setDiameter] = useState([])
+  const [planets, setPlanets] = useState(null);
+  const [reset, setReset] = useState([]);
+  const [loader, setLoader] = useState(true);
 
-    useEffect(() => {
-        fetch('https://swapi.dev/api/planets')
-            .then((response) => response.json())
-            .then((json) => setPlanets(json))
-          }, [])
-          
-          const handleClick = () => {
-            setDiameter(planets.results.sort((a, b) => a.diameter - b.diameter))
-          }
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("https://swapi.dev/api/planets");
+      const data = await response.json();
+      setPlanets(data.results);
+      setLoader(false);
+    };
+    fetchData();
+  }, [reset]);
+
+  const handleClick = () => {
+    const filter = planets.filter((s) => s.diameter !== "n/a" && "unknown")
+    const orderFilter = filter.sort((a, b) => a.diameter - b.diameter);
+    setPlanets(orderFilter);
+  };
 
   return (
-    <div className='content'>
-        <div className='content-large content__main'>
-            <button onClick={handleClick}>ordenar</button>
-            <div className='content__main-info'>
-              {planets && planets.results.map((m, index) => (
-                <div key={index} className='col-6 col-xl-3 col-md-3 col-sm-2 col-xs-2'>
+    <div className="content">
+      <div className="content-large content__main">
+        <div className="filters">
+          <div className="filters__options">
+            <h4>Order by:</h4>
+            <button className="button-contained" onClick={handleClick}>
+              Diameter
+            </button>
+            <button
+              className="button-contained"
+              onClick={() => setReset(planets)}
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+        {!loader ? (
+          <div className="content__main-info">
+            {planets &&
+              planets.map((m, index) => (
+                <div
+                key={index}
+                className="col-6 col-xl-3 col-md-3 col-sm-2 col-xs-2"
+                >
                   <Card
                     src={Img}
                     alt={m.name}
                     title={m.name}
                     subtitle={m.terrain}
-                    caption={m.population}
+                    caption={`population: ${m.population} / diameter: ${m.diameter}`}
                   />
                 </div>
               ))}
-            </div>
-        </div>
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

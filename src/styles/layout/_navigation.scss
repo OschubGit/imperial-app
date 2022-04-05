@@ -1,11 +1,11 @@
 .aside {
-    height: 100%;
-    box-sizing: border-box;
     border-right: 0.5px solid var(--grey300);
+    height: 100%;
+    @include  border-box;
 
     & .defaultImg{
-        padding: 12px;
         border-bottom: 0.5px solid var(--grey300);
+        padding: 12px;
 
         @media (max-width: 900.2px){
             display: none;
@@ -14,30 +14,44 @@
 
     .nav{
         padding: 24px;
+
         &__list{
+            font-family: var(--secondary-font);
             padding: 0;
             margin: 0;
             list-style: none;
-            font-family: var(--secondary-font);
 
             & hr{
                 border: 0.3px solid var(--grey300);
             }
             
             &-item{
+                color: var(--secondary-light);
                 padding: 8px 8px;
-                color: var(--common-black);
                 cursor: pointer;
                 display: flex;
                 gap: 8px;
                 align-items: center;
                 transition: all 0.2s ease;
 
+                & a {
+                    color: var(--secondary-light);
+                    @include flex-center;
+                    gap: 8px;
+
+                    &:active{
+                        color: inherit;
+                    }
+                    &:visited{
+                        color: inherit;
+                    }
+                }
+
                 &:hover{
                     background-color: var(--prussian-blue);
                     color: var(--common-white);
+                    @include rounded(4px);
                     transition: all 0.3s ease;
-                    border-radius: 4px;
                 }
                 &:hover svg{
                     transform: rotate(12deg);

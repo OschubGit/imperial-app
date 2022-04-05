@@ -2,8 +2,10 @@ import React from 'react'
 import NavImage from '../components/NavImage'
 import ImgDef from "../assets/planets/yaviniv.png"
 import Nav from './Nav'
+import { useLocation } from 'react-router-dom'
 
 const Aside = () => {
+  const location = useLocation()
   return (
     <div className='aside'>
       <div className='defaultImg'>
@@ -11,7 +13,7 @@ const Aside = () => {
           width='100%'
           src={ImgDef}
           alt="planets"
-          caption="Hi!"
+          caption={location.pathname === "/" ? "Planets" : location.pathname.slice(1)}
         />
       </div>
         <Nav/>
