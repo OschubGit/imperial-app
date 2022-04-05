@@ -11,7 +11,7 @@ const Aside = () => {
           width='100%'
           src={ImgDef}
           alt="planets"
-          caption="Planets"
+          caption="Hi!"
         />
       </div>
         <Nav/>
