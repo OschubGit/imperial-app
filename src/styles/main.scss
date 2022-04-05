@@ -12,6 +12,7 @@
 //layout
 @import "layout/layout";
 @import "layout/content";
+@import "layout/starships";
 @import "layout/header";
 @import "layout/navigation";
 @import "layout/footer";
@@ -22,7 +23,6 @@
 @import "components/card";
 @import "components/headerTitle";
 @import "components/navImage";
-@import "components/modal";
 
 //views
 @import "views/home";

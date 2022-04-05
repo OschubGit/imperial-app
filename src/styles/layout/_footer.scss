@@ -1,0 +1,9 @@
+.footer{
+    background-color: var(--prussian-blue);
+    font-size: var(--text-base);
+    color: var(--secondary-light);
+    @include flex-center;
+    height: 100px;
+    min-height: 100px;
+    width: 100%;
+}

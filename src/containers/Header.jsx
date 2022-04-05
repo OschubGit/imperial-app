@@ -14,28 +14,26 @@ const Header = () => {
   };
 
   return (
-    <>
-    <div className='header'>
-        <div className='header__title'>
-            <IoMenu onClick={handleClick} className='header__title-menu'/>
-            <HeaderTitle
-                title={"Imperial Destroyer Center"}
-            />
-        </div>
-        <div className='header__actions'>
-            <IoNotifications/>
-            <IoPersonCircle/>
-        </div>
-    </div>
-    {open && (
-      <div className='mobileMenu'>
-        <div className='mobileMenu__close'>
-          <IoCloseCircleSharp onClick={handleClose}/>
-        </div>
-        <Aside/>
+    <header>
+      <div className='header'>
+          <div className='header__title'>
+              <IoMenu onClick={handleClick} className='header__title-menu'/>
+              <HeaderTitle
+                  title={"Imperial Destroyer Center"}
+              />
+          </div>
+          <div className='header__actions'>
+              <IoNotifications/>
+              <IoPersonCircle/>
+          </div>
       </div>
-    )}
-    </>
+        <div className={open ? 'mobileMenu' : 'displayMenu'}>
+          <div className='mobileMenu__close'>
+            <IoCloseCircleSharp onClick={handleClose}/>
+          </div>
+          <Aside/>
+        </div>
+    </header>
   )
 }
 
